@@ -1,5 +1,9 @@
 # Game of Life com OpenCL
-O Game of Life, proposto por John Conway, é um autômato celular amplamente estudado em simulações de sistemas dinâmicos complexos. Sua simplicidade de regras e capacidade de gerar padrões complexos tornam-no ideal para explorar conceitos em computação paralela. Diante do crescimento da demanda por desempenho computacional, técnicas que exploram a capacidade massivamente paralela de GPUs vêm sendo cada vez mais aplicadas. Nesse contexto, o presente trabalho implementa o Game of Life utilizando a plataforma OpenCL, que permite a execução paralela do código em dispositivos heterogêneos, como CPUs e GPUs. 
+O Game of Life, proposto por John Conway, é um autômato celular estudado em simulações de sistemas dinâmicos complexos. Sua simplicidade de regras e capacidade
+de gerar padrões complexos tornam-no ideal para explorar conceitos em computação paralela. Diante do crescimento da demanda por desempenho computacional, técnicas
+que exploram a capacidade massivamente paralela de GPUs vêm sendo cada vez mais aplicadas. Nesse contexto, o presente trabalho propõe uma implementação do Game of Life utilizando a plataforma OpenCL, que permite a execução paralela do código em dispositivos heterogêneos, como GPUs.
+
+
 ## Arquivos do projeto
 O projeto está organizado nos seguintes arquivos arquivos: 
 - config.txt, este arquivo é responsável por passar parâmetros de entrada para a execução do software, nele são especificados quatro paramentos, separados por um espaço simples, os parâmetros são respectivamente, a altura da matriz, a largura da matriz, a quantidade de interações que serão realizadas, e o intervalo de interações para a capitara da imagem.
@@ -18,7 +22,7 @@ Para realizar os testes de execução a GPU utilizada possui as seguintes caract
 - Version: OpenCL 3.0 
 - Max. Compute Units: 24 
 
-As dimensões utilizadas para as matrizes foi 2000X2000. E a quantidade de interações foi variada nos seguintes valores: 100, 500, 1000, 5000 e 10000. A grade fou processada sem ser dividida em blocos de colunas para que a granularidade fosse baixa.
+As dimensões utilizadas para as matrizes foi 2000X2000. E a quantidade de interações foi variada nos seguintes valores: 50, 100, 500, 1000, 5000 e 10000. A grade fou processada sem ser dividida em blocos de colunas para que a granularidade fosse baixa.
 Os tempos de execução estão disponiveis no arquivo tempos_gpu.txt.
 Para a comparação com a versão serial utilisou-se o código disponivel no repositório: https://github.com/joseasteixeira/GameOfLife/tree/main/C%C3%B3digo%20Serial.
 As imagens geradas nos experimentos estão disponíveis na pasta imagens.
